@@ -1,0 +1,23 @@
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+ 
+<p>
+  <strong>Phone Number:</strong>
+  <%= @customer.phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+ 
+<p>
+  <strong>Area:</strong>
+  <%= @customer.area  %>
+</p>
+<BR>
+<%= link_to "New Customer" , new_customer_path %>
+<BR>
+<%= link_to "Customer List" , customers_path %>	

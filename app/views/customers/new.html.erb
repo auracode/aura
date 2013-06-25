@@ -1,0 +1,11 @@
+<p>Fill in the Details for the new customer </p>
+
+<%= simple_form_for @customer do |f| %>
+    <%= f.input :name %>
+    <%= f.input :area, required: false %>
+	<%= f.input :phone_number %>
+	<%= f.input :address, as: :text ,:input_html => {:style => 'width: 205px ; height: 50px'}%>
+    <%= f.button :submit %>
+<% end %>
+<BR>
+<%= link_to "Customer List" , customers_path %>	

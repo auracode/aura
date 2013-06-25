@@ -1,0 +1,27 @@
+<h1>Listing all the customers</h1>
+ 
+<table border="1" cellpadding="5" cellspacing="5">
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Area</th>
+  </tr>
+ 
+  <% @customers.each do |customers| %>
+    <tr>
+      <td><%= customers.name %></td>
+      <td><%= customers.phone_number %></td>
+      <td><%= customers.address %></td>
+      <td><%= customers.area %></td>
+    </tr>
+  <% end %>
+</table>
+<BR>
+<%= link_to "New Customer" , new_customer_path %>
+<BR>
+ <p>
+  Download:
+  <%= link_to "CSV", customers_path(format: "csv") %> |
+  <%= link_to "Excel", customers_path(format: "xls") %>
+</p>
