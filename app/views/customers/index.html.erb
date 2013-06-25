@@ -2,18 +2,26 @@
  
 <table border="1" cellpadding="5" cellspacing="5">
   <tr>
+    <th>Consumer Number</th>
     <th>Name</th>
     <th>Phone Number</th>
     <th>Address</th>
     <th>Area</th>
+    <th>Installation Date Enter digits</th>
+    <th>Flavors</th>
+    <th>Plan</th>
   </tr>
  
   <% @customers.each do |customers| %>
     <tr>
+      <td><%= customers.consumer_no %></td>
       <td><%= customers.name %></td>
       <td><%= customers.phone_number %></td>
       <td><%= customers.address %></td>
       <td><%= customers.area %></td>
+      <td><%= customers.installation_date %></td>
+      <td><%= customers.flavors %></td>
+      <td><%= customers.plan %></td>      
     </tr>
   <% end %>
 </table>

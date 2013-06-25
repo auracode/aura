@@ -1,4 +1,9 @@
 <p>
+  <strong>Consumer Id:</strong>
+  <%= @customer.consumer_no %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @customer.name %>
 </p>
@@ -16,6 +21,18 @@
 <p>
   <strong>Area:</strong>
   <%= @customer.area  %>
+</p>
+<p>
+  <strong>Installation Date:</strong>
+  <%= @customer.installation_date  %>
+</p>
+<p>
+  <strong>Flavors:</strong>
+  <%= @customer.flavors  %>
+</p>
+<p>
+  <strong>Plan:</strong>
+  <%= @customer.plan  %>
 </p>
 <BR>
 <%= link_to "New Customer" , new_customer_path %>
