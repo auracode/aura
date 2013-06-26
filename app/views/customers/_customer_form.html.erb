@@ -1,0 +1,11 @@
+<%= simple_form_for @customer do |f| %>
+    <%= f.input :consumer_no %>
+    <%= f.input :name %>
+    <%= f.input :area, required: false %>
+	<%= f.input :phone_number %>
+	<%= f.input :address, as: :text ,:input_html => {:style => 'width: 205px ; height: 50px'}%>
+	<%= f.input :installation_date, placeholder: 'ddmmyy no space or /-' %>
+	<%= f.input :flavors, placeholder: 'example: 3 rose'%>
+	<%= f.input :plan, placeholder: 'enter only numbers'  %>
+    <%= f.button :submit %>
+<% end %>

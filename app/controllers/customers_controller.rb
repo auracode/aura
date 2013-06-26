@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+	respond_to :html, :json
+
 	def new
 		@customer = Customer.new
 	end
@@ -23,5 +25,25 @@ class CustomersController < ApplicationController
 		end
 		
 	end
+
+	def edit
+		@customer = Customer.find(params[:id])
+	end
+
+	def update
+    	@customer = Customer.find(params[:id])
+    	@customer.update_attributes(params[:customer])
+    	respond_with @customer
+  	end
+    def destroy
+  		@customer = Customer.find(params[:id])
+  		@customer.destroy
+ 
+  		respond_to do |format|
+    	format.html { redirect_to customers_url }
+    	format.json { head :no_content }
+  	end
+end
+
 
 end
