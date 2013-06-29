@@ -1,35 +1,27 @@
-<?xml version="1.0"?>
-<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:x="urn:schemas-microsoft-com:office:excel"
-  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
-  xmlns:html="http://www.w3.org/TR/REC-html40">
-  <Worksheet ss:Name="Sheet1">
-    <Table>
-      <Row>
-        <Cell><Data ss:Type="String">Consumer No.</Data></Cell>
-        <Cell><Data ss:Type="String">Name</Data></Cell>
-        <Cell><Data ss:Type="String">Phone Number</Data></Cell>
-        <Cell><Data ss:Type="String">Address</Data></Cell>
-        <Cell><Data ss:Type="String">Area</Data></Cell>
-        <Cell><Data ss:Type="String">Installation Date</Data></Cell>
-        <Cell><Data ss:Type="String">Flavors</Data></Cell>
-        <Cell><Data ss:Type="String">Plan Taken</Data></Cell>
-      </Row>
-    <% @customers.each do |customer| %>
-      <Row>
-        <Cell><Data ss:Type="String"><%= customer.consumer_no %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= customer.name %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= customer.phone_number %></Data></Cell>
-        <Cell><Data ss:AutoFitWidth="Text"><%= customer.address %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= customer.area %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= customer.installation_date %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= customer.flavors %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= customer.plan %></Data></Cell>
-      </Row>
-    <% end %>
-    </Table>
-  </Worksheet>
-</Workbook>
-
-
+<h1>Listing users</h1>
+<table>
+  <tr>
+    <th>Consumer No</th>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Area</th>
+    <th>Installation Date</th>
+    <th>Flavors</th>
+    <th>Plan</th>
+  </tr>
+ 
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.consumer_no %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.phone_number %></td>
+      <td><%= customer.address %></td>
+      <td><%= customer.area %></td>
+      <td><%= l customer.installation_date %></td>
+      <td><%= customer.flavors %></td>
+      <td><%= customer.plan %></td>      
+    </tr>
+  <% end %>
+</table>
+<br/>
