@@ -4,7 +4,7 @@ class ChangeInstallationdateStringToDate < ActiveRecord::Migration
   connection.execute(%q{
     alter table customers
     alter column installation_date
-    type date using cast(string as date)
+    type date using cast(installation_date as date)
   })
   	change_column  :customers, :installation_date, :date
   end
