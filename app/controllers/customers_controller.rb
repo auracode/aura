@@ -16,7 +16,11 @@ class CustomersController < ApplicationController
 	end
 
 	def index
-		@customers = Customer.all
+		if params[:search].present?
+		   @customers = Customer.search(params[:search])
+    	else
+      		@customers = Customer.all
+    	end
 
 		respond_to do |f|
 			f.html
