@@ -11,20 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629172131) do
+ActiveRecord::Schema.define(:version => 20130629193859) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "phone_number"
     t.text     "address"
     t.string   "area"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "consumer_no"
     t.string   "flavors"
     t.integer  "machine_count"
     t.integer  "plan"
-    t.string   "installation_date"
+    t.date     "installation_date", :limit => 255
   end
 
 end

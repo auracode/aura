@@ -7,7 +7,6 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
         <Cell><Data ss:Type="String">Consumer No.</Data></Cell>
         <Cell><Data ss:Type="String">Name</Data></Cell>
         <Cell><Data ss:Type="String">Phone Number</Data></Cell>
@@ -19,8 +18,7 @@
       </Row>
     <% @customers.each do |customer| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= customer.id %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= customer.consumer_no %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= customer.consumer_no %></Data></Cell>
         <Cell><Data ss:Type="String"><%= customer.name %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= customer.phone_number %></Data></Cell>
         <Cell><Data ss:AutoFitWidth="Text"><%= customer.address %></Data></Cell>
