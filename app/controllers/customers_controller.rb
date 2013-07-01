@@ -44,10 +44,19 @@ class CustomersController < ApplicationController
   		@customer.destroy
  
   		respond_to do |format|
-    	format.html { redirect_to customers_url }
-    	format.json { head :no_content }
-  	end
-end
-
-
+    		format.html { redirect_to customers_url }
+    		format.json { head :no_content }
+  		end
+	end
+	def import
+		if params[:file].nil?
+		   redirect_to customers_path, notice: "Select a file before Importing!"
+		   	
+		elsif params[:file].original_filename.split('.').last != 'csv'
+		 	 redirect_to customers_path, notice: "Select a csv file only"
+	    else
+	      Customer.import(params[:file])
+		  redirect_to customers_path, notice: "Clients Imported"	
+	    end
+	end
 end

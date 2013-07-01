@@ -39,6 +39,14 @@
     </tr>
   <% end %>
 </table>
+<br>
+<!-- Implement the import by csv, excel file-->
+<%= form_tag import_customers_path, multipart: true do %>
+  <%= file_field_tag :file , accept: 'file/csv'%>
+  <%= submit_tag "Import" %>
+  <% end %>
+<!-- End -->
+<br>
 <BR>
 <%= link_to "New Customer" , new_customer_path %>
 <BR>

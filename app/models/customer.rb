@@ -25,4 +25,11 @@ class Customer < ActiveRecord::Base
     @customer.installation_date + @customer.plan
   end
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Customer.create! row.to_hash
+    end
+  end
+
+
 end
