@@ -30,7 +30,7 @@
       <td><%= customer.phone_number %></td>
       <td><%= customer.address %></td>
       <td><%= customer.area %></td>
-      <td><%= l customer.installation_date %></td>
+      <td> <%= customer.installation_date ? l(customer.installation_date, :format => :long) : "Enter a date" %> </td>
       <td><%= customer.flavors %></td>
       <td><%= customer.plan %></td>      
       <td><%= link_to 'Delete Record', customer,

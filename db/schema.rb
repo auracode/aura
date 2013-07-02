@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(:version => 20130629193859) do
     t.string   "phone_number"
     t.text     "address"
     t.string   "area"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "consumer_no"
     t.string   "flavors"
     t.integer  "machine_count"
     t.integer  "plan"
-    t.date     "installation_date", :limit => 255
+    t.date     "installation_date"
   end
 
 end
