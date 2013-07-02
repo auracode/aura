@@ -20,6 +20,7 @@
     <th>Installation Date</th>
     <th>Flavors</th>
     <th>Plan</th>
+    <th>Machine Count</th>
     <th>Delete Customer</th>
   </tr>
  
@@ -32,7 +33,8 @@
       <td><%= customer.area %></td>
       <td> <%= customer.installation_date ? l(customer.installation_date, :format => :long) : "Enter a date" %> </td>
       <td><%= customer.flavors %></td>
-      <td><%= customer.plan %></td>      
+      <td><%= customer.plan %></td>  
+      <td><%= customer.machine_count%></td>    
       <td><%= link_to 'Delete Record', customer,
                :confirm => 'Are you sure?',
                :method => :delete , :class => "btn btn-mini btn-primary" %></td>
