@@ -1,4 +1,7 @@
-<h1>Listing all the customers</h1>
+<h1>Listing all the customers</h1> 
+<p> Customer Count: <%=Customer.all.count%></p>
+<p> Remaining Machine Count: <%= 200 - Customer.total_employed_machines %> </p>
+<p> Number of deliveries today is <%= delivery_status %>    </p>
 <!--Search Box -->
 
 
@@ -21,6 +24,7 @@
     <th>Flavors</th>
     <th>Plan</th>
     <th>Machine Count</th>
+    <th>Delivery Date</th>
     <th>Delete Customer</th>
   </tr>
  
@@ -34,7 +38,8 @@
       <td> <%= customer.installation_date ? l(customer.installation_date, :format => :long) : "Enter a date" %> </td>
       <td><%= customer.flavors %></td>
       <td><%= customer.plan %></td>  
-      <td><%= customer.machine_count%></td>    
+      <td><%= customer.machine_count%></td>
+      <td><%= customer.delivery_date ? l(customer.delivery_date, :format => :long) : "Enter a date" %></td>    
       <td><%= link_to 'Delete Record', customer,
                :confirm => 'Are you sure?',
                :method => :delete , :class => "btn btn-mini btn-primary" %></td>

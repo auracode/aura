@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629193859) do
+ActiveRecord::Schema.define(:version => 20130702185533) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20130629193859) do
     t.integer  "machine_count"
     t.integer  "plan"
     t.date     "installation_date"
+    t.integer  "quote"
+    t.integer  "period"
   end
 
 end
