@@ -1,0 +1,5 @@
+<%= simple_form_for @task  do |f| %>
+	<%= f.input :name , required: true%>
+    <%= f.input :published_on, as: :date_picker %>
+    <%= f.button :submit %>
+<% end %>

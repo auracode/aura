@@ -1,3 +1,16 @@
 @import "bootstrap";
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
+#tasks {
+  h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  p { margin: 5px 0; }
+  .info {
+    font-style: italic;
+  }
+}
+
+

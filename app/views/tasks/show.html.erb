@@ -1,0 +1,11 @@
+<center>Task name</center>
+
+<p class="info"><strong>Task Date</strong> <%= @task.published_on.strftime("%B %e, %Y") %></p> 
+<strong><%=  @task.name %><strong>
+	<BR/>
+<BR/>
+
+<p>
+  <%= link_to "Edit task", edit_task_path(@task) %> |
+  <%= link_to "Back to tasks", tasks_path %>
+</p>
