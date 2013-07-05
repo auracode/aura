@@ -1,6 +1,8 @@
 class Customer < ActiveRecord::Base
   attr_accessible :address, :name, :phone_number, :area, :consumer_no, :installation_date, :flavors, :machine_count, :plan, :quote, :period
+
   default_scope order('installation_date ASC')
+
 
   def self.to_csv(options={})
     @column_names= Customer.new.attributes.map {|k,v| k.to_s}.delete_if {|x| ["created_at", "updated_at"].include?(x)}

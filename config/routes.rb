@@ -1,8 +1,10 @@
 Aura::Application.routes.draw do
+  
   resources  :customers do
     collection {post :import}  
   end
 
+  resources :tasks 
 
   root to: "index#home"
 
