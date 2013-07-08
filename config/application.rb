@@ -57,6 +57,10 @@ module Aura
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Force Aura Application to not access the Db or load models on precompiling your assets required while 
+    # Hosting on Heroku
+    config.assets.initialize_on_precompile = false
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end

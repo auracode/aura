@@ -1,5 +1,7 @@
 Aura::Application.routes.draw do
   
+  devise_for :users
+
   resources  :customers do
     collection {post :import}  
   end

@@ -1,4 +1,10 @@
 <%= link_to "Home", root_path, :class => 'brand' %>
+<div class = 'brand align-right'>
+<% if current_user %>
+  Logged in as <%= current_user.email%>
+  <%= link_to "Log out", destroy_user_session_path, :method => :delete %>  	
+  <% end%>
+</div>
 <ul class="nav">
   
 </ul>
