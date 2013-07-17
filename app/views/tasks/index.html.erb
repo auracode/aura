@@ -17,7 +17,7 @@
         <% if @tasks_by_date[date] %>
         <ul>
           <% @tasks_by_date[date].each do |task| %>
-          <li><%= link_to task.name, task %></li>
+          <li><%= link_to task.title, task %></li>
           <% end %>
         </ul>
         <% end %>
@@ -31,7 +31,7 @@
           <br>
           <div class="task-index-padding">
           <% Task.all.map {|x| x if x.published_on == Date.today }.each  do |n|%>
-          <pre><%= if n.nil? then "No task" else n.name end %></pre>
+          <pre><%= if n.nil? then "No task" else n.title end %></pre>
           <%end%>
           </div>
 
