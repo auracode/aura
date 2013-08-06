@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
+//= require jquery.ui.droppable
 //= require bootstrap
 //= require_tree .
  

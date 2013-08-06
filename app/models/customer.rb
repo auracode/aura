@@ -28,6 +28,17 @@ class Customer < ActiveRecord::Base
     @customer.installation_date + (@customer.period ? @customer.period.days : 0.days)     
   end
 
+  def delivery_date_for
+    @customer.installation_date + (@customer.period ? @customer.period.days : 0.days)     
+  end
+
+
+  def delivery_date_f
+    @customer = Customer.find(self.id)
+    delivery_date_for.strftime("%B %d, %Y")  
+  end
+
+
   def self.total_employed_machines
     Customer.all.map {|x| x.machine_count ? x.machine_count : 0 }.sum
   end

@@ -34,6 +34,16 @@ class CustomersController < ApplicationController
 		@customer = Customer.find(params[:id])
 	end
 
+	def edit_delivery_date
+		@customer = Customer.find(params[:id])
+	end
+
+	def update_delivery_date
+		@customer = Customer.find(params[:id])
+    	@customer.update_attributes(params[:customer])
+    	respond_with @customer
+	end
+
 	def update
     	@customer = Customer.find(params[:id])
     	@customer.update_attributes(params[:customer])

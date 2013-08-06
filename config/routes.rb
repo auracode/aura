@@ -4,6 +4,8 @@ Aura::Application.routes.draw do
 
   resources  :customers do
     collection {post :import}  
+    get 'edit_delivery_date', on: :member
+    
   end
 
   resources :tasks 
