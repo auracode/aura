@@ -12,12 +12,12 @@ $(function () {
 </head>
 <body>
 <div class = "row"> 
-  <div class= "span5"> <h1 class= "center">Tasks</h1></div>
-  <div class= "span5"> <h2 class = "text-right"><%= link_to "New task", new_task_path %></h2></div>
+  <div class= "span5"> <h1 class= "text-left">Tasks</h1></div>
+  <div class= "span3"> <h2 class = "text-right"><%= link_to "New task", new_task_path %></h2></div>
 </div>
 
 <div class = "row">
-<div class = "span8">
+<div class = "span12">
       <!--Sidebar Content starts -->
       <div id="tasks">
         <h2 id="month">
@@ -38,18 +38,7 @@ $(function () {
       </div>
     <!--Sidebar content ends-->
   </div> 
-    <div class="span4 ">
-        <!--Body content Starts-->
-        <strong> Today's Tasks List (<%= Date.today%>)<strong>
-          <br>
-          <div class="task-index-padding">
-          <% Task.all.map {|x| x if x.published_on == Date.today }.each  do |n|%>
-          <pre><%= if n.nil? then "No task" else n.title end %></pre>
-          <%end%>
-          </div>
-
-        <!--Body content Ends-->
-    </div>
+    
      </div>
      </div>   
 </body>
