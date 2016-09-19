@@ -6,23 +6,23 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: aura_development
-  username: geomap 
+  database: myapp_development
+  username: myapp 
   password: qwe
   host: localhost
 
 test:
   adapter: postgresql
   encoding: utf8
-  database: aura_test
-  username: geomap 
+  database: myapp_test
+  username: myapp  
   password: qwe
   host: localhost
 
 production:
   adapter: postgresql
   encoding: utf8
-  database: aura_production
-  username: geomap
+  database: myapp_production
+  username: myapp 
   password: qwe 
   host: localhost
