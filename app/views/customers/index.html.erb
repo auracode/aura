@@ -1,6 +1,6 @@
 <h1>Listing all the customers</h1> 
-<p> Customer Count: <%=Customer.all.count%></p>
-<p> Remaining Machine Count: <%= 200 - Customer.total_employed_machines %> </p>
+<p> Customer Count: <%=Customer.all.compact.count%></p>
+<p> Machine Count: <%= Customer.total_employed_machines %> </p>
 <p> Number of deliveries today is <%= delivery_status %>    </p>
 <!--Search Box -->
 
