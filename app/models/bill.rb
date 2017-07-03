@@ -11,4 +11,13 @@ class Bill < ActiveRecord::Base
  	end
  	
  end
+
+ def self.outstanding_amount
+    a = Payment.all.map { |m| m.customer_id }.uniq
+    b = Customer.find(a).map { |n| n.bill_ids}
+    c = Bill.find(b)
+    d = c.map {|o| o.amount if o.status=="Pending"}.compact
+    @amount = d.inject(0) { |sum, x| sum +x }
+ end
+
 end

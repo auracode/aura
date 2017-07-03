@@ -46,7 +46,10 @@ class BillsController < ApplicationController
     		format.json { head :no_content }
   		end
 	end
-	
+
+	def outstanding
+		@bills = Bill.find(:all, :conditions =>{:status => "Pending"})
+	end	
 
 
 		

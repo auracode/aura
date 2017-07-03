@@ -1,4 +1,6 @@
-<h1>Listing all the bills</h1>
+<%= p @bills %>
+
+<h1>Listing all outstanding bills</h1>
  <p class="text-success"><strong>Edit</strong> via clicking the PartyName</p>
 <table border="1" cellpadding="5" cellspacing="5">
   <tr>
@@ -24,11 +26,3 @@
     </tr>
   <% end %>
 </table>
-<BR>
-<%= link_to "New Bill" , new_bill_path %>
-<BR>
-<%= link_to "Customer list", customers_path %>
-<BR>
-<BR>
-<%= link_to "Outstanding bills", bills_outstanding_bills_path %>
-<BR>

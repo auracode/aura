@@ -28,7 +28,13 @@ Aura::Application.routes.draw do
 
   resources :tasks 
 
-  resources :bills
+  resources :bills do
+    collection do
+      get 'bills/outstanding'
+
+    end
+
+  end
 
 
 
