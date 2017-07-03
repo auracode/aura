@@ -1,0 +1,45 @@
+<h1>Payments#index</h1>
+<p><%= @customer.name%></p>
+<h1>Listing all the bills</h1>
+ <p class="text-success"><strong>Edit</strong> via clicking the PartyName</p>
+<table border="1" cellpadding="5" cellspacing="5">
+  <tr>
+    <th>Company name</th>
+    <th><%= link_to "Bill Amount", bills_path(:sort =>"amount")%></th>
+    <th>Bill No</th>
+    <th><%= link_to "Bill Date", bills_path(:sort => "issue_date")%></th>
+    <th><%= link_to "Status", bills_path(:sort => "status")%></th>
+    <th>Cheque/Cash details</th>
+    <th>Bank Name</th>
+    <th>Credited on</th>
+    <th>Remaining Amount</th>
+    <th>Collected By</th>
+    <th>Reminder Date</th>
+    <th>Delete Bill</th>
+  </tr>
+ 
+  <% @bills.each do |bill| %>
+    <tr>
+    <td><%= @customer.name%></td>
+    <td><%= link_to bill.bill_no, edit_bill_path(bill) %></td>
+    <td><%=  bill.amount %></td>
+    <td><%= bill.issue_date %></td>
+    <td><%= bill.status %></td>
+    <td><%= bill.cheque_no %> </td>
+    <td><%= bill.bank_name %></td>
+    <td><%= bill.credited_on %></td>
+    <td><%= bill.remaining_amount %></td>  
+    <td><%= bill.collected_by %></td>
+    <td><%= bill.bill_no %></td>    
+    <td><%= link_to 'Delete Record', bill,
+               :confirm => 'Are you sure?',
+               :method => :delete , :class => "btn btn-mini btn-primary" %></td>
+    </tr>
+  <% end %>
+</table>
+<BR>
+<%= link_to "New Bill" , new_bill_path %>
+<BR>
+<%= link_to "List of Bills" , bills_path %>
+
+<BR>

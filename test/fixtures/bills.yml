@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bill_type: MyString
+  bill_no: 1
+  issue_date: 2017-06-15
+  amount: 1
+  status: MyString
+  cheque_no: 1
+  bank_name: MyString
+  credited_on: 2017-06-15
+  remaining_amount: 1
+  collected_by: MyString
+
+two:
+  bill_type: MyString
+  bill_no: 1
+  issue_date: 2017-06-15
+  amount: 1
+  status: MyString
+  cheque_no: 1
+  bank_name: MyString
+  credited_on: 2017-06-15
+  remaining_amount: 1
+  collected_by: MyString

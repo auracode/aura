@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717140000) do
+ActiveRecord::Schema.define(:version => 20170615122753) do
+
+  create_table "bills", :force => true do |t|
+    t.string   "bill_type"
+    t.integer  "bill_no"
+    t.date     "issue_date"
+    t.integer  "amount"
+    t.string   "status"
+    t.integer  "cheque_no"
+    t.string   "bank_name"
+    t.date     "credited_on"
+    t.integer  "remaining_amount"
+    t.string   "collected_by"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -27,6 +42,15 @@ ActiveRecord::Schema.define(:version => 20130717140000) do
     t.date     "installation_date"
     t.integer  "quote"
     t.integer  "period"
+  end
+
+  create_table "payments", :force => true do |t|
+    t.integer  "bill_id"
+    t.integer  "customer_id"
+    t.date     "reminder"
+    t.string   "remark"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tasks", :force => true do |t|

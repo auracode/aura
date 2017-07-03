@@ -1,0 +1,14 @@
+<%= simple_form_for @bill do |f| %>
+    <%= f.input :bill_no, required: true%>
+    <%=	f.association :customers, :as => :check_boxes %>
+    <%= f.input :issue_date, as: :date_picker ,:required => 'required'%>
+    <%= f.input :bill_type %>
+	<%= f.input :bank_name %>
+	<%= f.collection_radio_buttons :status, [['paid'], ['Pending'], ['part-payment']], :first, :last, :item_wrapper_class => 'inline' , :checked => true %>
+	<%= f.input :credited_on, as: :date_picker, required: false %>
+	<%= f.input :remaining_amount, placeholder: 'put none if nothing remianing'%>
+	<%= f.input :cheque_no, placeholder: 'write cash if paid in cash'  %>
+	<%= f.input :collected_by, placeholder: 'name of person'  %>
+	<%= f.input :amount %>
+    <%= f.button :submit %>
+<% end %>

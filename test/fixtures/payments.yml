@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bill_id: 1
+  customer_id: 1
+  reminder: 2017-06-15
+  remark: MyString
+
+two:
+  bill_id: 1
+  customer_id: 1
+  reminder: 2017-06-15
+  remark: MyString

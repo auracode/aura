@@ -1,0 +1,49 @@
+<p>
+  <strong>Company name:</strong>
+  <%= @bill.payments.empty? || @bill.payments.first.customer.name %>
+</p>
+<p>
+  <strong>Bill Number:</strong>
+  <%= @bill.bill_no %>
+</p>
+
+<p>
+  <strong>Bill date:</strong>
+  <%= @bill.issue_date %>
+</p>
+ 
+<p>
+  <strong>Bill type:</strong>
+  <%= @bill.bill_type %>
+</p>
+
+<p>
+  <strong>Bill status:</strong>
+  <%= @bill.status  %>
+</p>
+<p>
+  <strong>Cash/Cheque Details:</strong>
+  <%= @bill.cheque_no %>
+</p>
+ 
+
+<p>
+  <strong>Bank name</strong>
+  <%= @bill.bank_name %>
+</p>
+<p>
+  <strong>Collected by:</strong>
+  <%= @bill.collected_by %>
+</p>
+<p>
+  <strong>remaining amount:</strong>
+  <%= @bill.remaining_amount  %>
+</p>
+<p>
+  <strong>Credited on:</strong>
+  <%= @bill.credited_on  %>
+</p>
+<BR>
+<%= link_to "New bill" , new_bill_path %>
+<BR>
+<%= link_to " List of bills" , bills_path %>	

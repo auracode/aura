@@ -1,14 +1,36 @@
 Aura::Application.routes.draw do
   
+  get "payments/index"
+
+  get "payments/edit"
+
+  get "payments/show"
+
+  get "payments/new"
+
+  get "payments/create"
+
+  get "payments/update"
+
+  get "payments/destroy"
+
+  get "bills/index"
+
   devise_for :users
 
   resources  :customers do
     collection {post :import}  
     get 'edit_delivery_date', on: :member
+
+    resources :payments
     
   end
 
   resources :tasks 
+
+  resources :bills
+
+
 
   root to: "index#home"
 
