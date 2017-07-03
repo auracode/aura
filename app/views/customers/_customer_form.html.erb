@@ -1,6 +1,7 @@
 <%= simple_form_for @customer do |f| %>
     <%= f.input :consumer_no %>
     <%= f.input :name %>
+    <%= f.input :gstid, required: false %>
     <%= f.input :area, required: false %>
 	<%= f.input :phone_number %>
 	<%= f.input :address, as: :text ,:input_html => {:style => 'width: 205px ; height: 50px'}%>

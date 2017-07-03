@@ -1,5 +1,5 @@
   class Customer < ActiveRecord::Base
-  attr_accessible :address, :name, :phone_number, :area, :consumer_no, :installation_date, :flavors, :machine_count, :plan, :quote, :period
+  attr_accessible :address, :name, :phone_number, :area, :consumer_no, :installation_date, :flavors, :machine_count, :plan, :quote, :period, :gstid
 
   default_scope order('installation_date ASC')
   has_many :payments

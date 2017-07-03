@@ -17,6 +17,7 @@
   <tr>
     <th>Consumer No</th>
     <th>Name</th>
+    <th>GST Number</th>
     <th>Phone Number</th>
     <th>Address</th>
     <th>Area</th>
@@ -32,6 +33,7 @@
     <tr>
       <td><%= link_to customer.consumer_no, edit_customer_path(customer) %></td>
       <td><%= customer.name %></td>
+      <td><%= customer.gstid %></td>
       <td><%= customer.phone_number %></td>
       <td><%= customer.address %></td>
       <td><%= customer.area %></td>
