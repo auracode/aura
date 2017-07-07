@@ -4,3 +4,5 @@ Models :
 1. Customer 
 2. Tasks 
 3. Machines
+
+Deployment status -7/7/2017
