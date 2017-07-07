@@ -1,6 +1,6 @@
 <%= simple_form_for @bill do |f| %>
     <%= f.input :bill_no, required: true%>
-    <%=	f.association :customers, :as => :check_boxes %>
+    <%=	f.association :customers %>
     <%= f.input :issue_date, as: :date_picker ,:required => 'required'%>
     <%= f.input :bill_type %>
 	<%= f.input :bank_name %>

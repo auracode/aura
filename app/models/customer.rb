@@ -59,5 +59,12 @@
   def self.deliveries
       all.map { |x| x.consumer_no if x.delivery_date == Date.today }
   end   
-
+  
+  def pending
+    if Customer.find(self.id).bill_ids.nil?
+      print "No bill raised"
+    else
+     Bill.find(Customer.find(self.id).bill_ids).collect {|b| b.amount if b.status == "Pending"}.compact.sum
+    end
+  end
 end

@@ -48,8 +48,10 @@ class BillsController < ApplicationController
 	end
 
 	def outstanding
-		@bills = Bill.find(:all, :conditions =>{:status => "Pending"})
-	end	
+		a=Payment.all.map {|m| m.customer_id}.uniq
+		@customers = Customer.find(a).map
+		@bills = Bill.find(:all, :conditions => {:status => "Pending"})
+	end
 
 
 		

@@ -7,6 +7,9 @@
 </div>
 <%= link_to "Bills ", bills_path, :class => 'brand' %>
 <%= link_to "Customers" ,customers_path , :class => 'brand' %>
+<%= link_to "Outstanding" ,bills_outstanding_bills_path , :class => 'brand' %>
+<%= link_to "Outstanding:Rs#{Bill.outstanding_amount}", root_path, :class => 'brand' %>
+
 <ul class="nav">
   
 </ul>

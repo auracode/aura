@@ -1,4 +1,26 @@
-<%= p @bills %>
+
+
+<h1>Listing all outstanding payments</h1>
+ <p class="text-success"><strong>Check details</strong> via clicking the PartyName</p>
+<table border="1" cellpadding="5" cellspacing="5">
+  <tr>
+    <th>Company name</th>
+    <th>Pending Amount</th>
+    
+  </tr>
+ 
+  <% @customers.each do |customer| %>
+    <tr>
+    <td><%= link_to(customer.name,customer_payments_path(customer))%></td>
+    <td><%= customer.pending %></td>
+    
+    </tr>
+  <% end %>
+</table>
+
+
+
+
 
 <h1>Listing all outstanding bills</h1>
  <p class="text-success"><strong>Edit</strong> via clicking the PartyName</p>
