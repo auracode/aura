@@ -1,4 +1,6 @@
 <BLOCKQUOTE>Welcome to Home Page</BLOCKQUOTE>
+
+<h1><%= link_to "GET YOUR TOKEN HERE" , api_token_user_path(current_user)%></h1>
 <BR>
 <p>The management system is based on 3 models </p>
 <ul>
@@ -6,6 +8,8 @@
 <li><%= link_to "Task", tasks_path %></li>
 <li><%= link_to "Payments", bills_path %></li>
 <li><%= "Total outstanding is Rs #{Bill.outstanding_amount}"%></li>
+
+
 
 <li>Machine</li>
 </ul>

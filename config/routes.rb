@@ -36,7 +36,11 @@ Aura::Application.routes.draw do
 
   end
 
-
+ resources :users , only: [] do
+   member do
+     get 'api_token'
+   end
+ end
 
   root to: "index#home"
 
