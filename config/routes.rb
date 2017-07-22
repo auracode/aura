@@ -40,6 +40,9 @@ Aura::Application.routes.draw do
 
   root to: "index#home"
 
+  namespace :api do
+    resources :customers
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
