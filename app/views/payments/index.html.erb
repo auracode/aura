@@ -5,8 +5,8 @@
 <table border="1" cellpadding="5" cellspacing="5">
   <tr>
     <th>Company name</th>
-    <th><%= link_to "Bill Amount", bills_path(:sort =>"amount")%></th>
     <th>Bill No</th>
+    <th><%= link_to "Bill Amount", bills_path(:sort =>"amount")%></th>
     <th><%= link_to "Bill Date", bills_path(:sort => "issue_date")%></th>
     <th><%= link_to "Status", bills_path(:sort => "status")%></th>
     <th>Cheque/Cash details</th>
