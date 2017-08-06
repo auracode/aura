@@ -1,21 +1,6 @@
 Aura::Application.routes.draw do
   
-  get "payments/index"
-
-  get "payments/edit"
-
-  get "payments/show"
-
-  get "payments/new"
-
-  get "payments/create"
-
-  get "payments/update"
-
-  get "payments/destroy"
-
-  get "bills/index"
-
+  
   devise_for :users
 
   resources  :customers do
