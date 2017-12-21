@@ -30,6 +30,8 @@
   </tr>
  
   <% @customers.each do |customer| %>
+  <%  if customer.machine_count.present?  %>
+  <% if customer.machine_count > 0 %>
     <tr>
       <td><%= link_to customer.consumer_no, edit_customer_path(customer) %></td>
       <td><%= customer.name %></td>
@@ -46,6 +48,8 @@
                :confirm => 'Are you sure?',
                :method => :delete , :class => "btn btn-mini btn-primary" %></td>
     </tr>
+  <% end %>
+  <% end %>
   <% end %>
 </table>
 <br>
