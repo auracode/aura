@@ -5,6 +5,7 @@
     <%= f.input :area, required: false %>
 	<%= f.input :phone_number %>
 	<%= f.input :address, as: :text ,:input_html => {:style => 'width: 205px ; height: 50px'}%>
+	<%= f.input :how_to_reach, as: :text, :input_html => {:style => 'width: 205px ; height: 50px'}%>
 	<%= f.input :installation_date, as: :date_picker %>
 	<%= f.input :flavors, placeholder: 'example: 3 rose'%>
 	<%= f.input :plan, placeholder: 'enter only numbers'  %>

@@ -12,10 +12,13 @@
 <% end %>
 <!--End of Search Box-->
 
- <p class="text-success"><strong>Edit</strong> via clicking the Customer Number</p>
+
+<%= form_tag select_customers_path, :method => :post do %>
+   <p class="text-success"><strong>Edit</strong> via clicking the Customer Number</p>
 <table border="1" cellpadding="5" cellspacing="5">
   <tr>
     <th>Consumer No</th>
+    <th>Chk</th>
     <th>Name</th>
     <th>GST Number</th>
     <th>Phone Number</th>
@@ -34,6 +37,7 @@
   <% if customer.machine_count > 0 %>
     <tr>
       <td><%= link_to customer.consumer_no, edit_customer_path(customer) %></td>
+      <td><%= check_box_tag "tag_ids[]",customer.id, false, {multiple: true}  %></td>
       <td><%= customer.name %></td>
       <td><%= customer.gstid %></td>
       <td><%= customer.phone_number %></td>
@@ -53,6 +57,12 @@
   <% end %>
 </table>
 <br>
+<%= submit_tag "Selector" %>
+
+<th></th>
+<% end %>
+
+
 <!-- Implement the import by csv, excel file-->
 <%= form_tag import_customers_path, multipart: true do %>
   <%= file_field_tag :file , accept: 'file/csv'%>

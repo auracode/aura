@@ -12,8 +12,9 @@ class CustomersController < ApplicationController
 	end
 
 	def show
-	  @customer = Customer.find(params[:id])
-	end
+	  
+		@customer = Customer.find(params[:id])
+	  end
 
 	def index
 		if params[:search].present?
@@ -29,6 +30,15 @@ class CustomersController < ApplicationController
 		end
 		
 	end
+
+	def select
+		if params[:tag_ids]
+		@customers = Customer.find(params[:tag_ids])
+		else
+		@customers = Customer.all
+		end
+	end
+
 
 	def edit
 		@customer = Customer.find(params[:id])

@@ -1,0 +1,29 @@
+<table border="1" cellpadding="5" cellspacing="5">
+
+
+  <tr>
+    <th>Consumer No</th>
+    <th>Task</th>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>How to Reach</th>
+    <th>Flavors</th>
+    <th>Machine Count</th>
+    <th>Remark</th>
+  </tr>
+ 
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= link_to customer.consumer_no, edit_customer_path(customer) %></td>
+      <td> </td>
+      <td><%= customer.name  %></td>
+      <td><%= customer.phone_number %></td>
+      <td><%= customer.address %></td>
+      <td><%= customer.how_to_reach %></td>
+      <td><%= customer.flavors %></td>
+      <td><%= customer.machine_count%></td>
+      <td> </td>
+    </tr>  
+  <% end %>
+</table>

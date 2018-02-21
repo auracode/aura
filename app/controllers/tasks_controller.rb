@@ -3,6 +3,7 @@ class TasksController < ApplicationController
     @tasks = Task.all
     @tasks_by_date = @tasks.group_by(&:published_on)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @customers= Customer.order(:consumer_no)
   end
 
   def show
@@ -11,6 +12,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    
   end
 
   def create
@@ -33,6 +35,11 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def select
+    @customers = Customer.find(params[:customer_id])
+    
   end
 
   def destroy

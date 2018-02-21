@@ -1,5 +1,5 @@
   class Customer < ActiveRecord::Base
-  attr_accessible :address, :name, :phone_number, :area, :consumer_no, :installation_date, :flavors, :machine_count, :plan, :quote, :period, :gstid
+  attr_accessible :address, :name, :phone_number, :area, :consumer_no, :installation_date, :flavors, :machine_count, :plan, :quote, :period, :gstid, :how_to_reach
 
   default_scope order('installation_date ASC')
   has_many :payments
@@ -15,6 +15,10 @@
   		end
   	end
   	
+  end
+
+  def sort_by_consumer_no
+    Customer.order(:consumer_no)
   end
 
   def self.search(search)

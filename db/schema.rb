@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170722123748) do
+ActiveRecord::Schema.define(:version => 20180210074916) do
 
   create_table "bills", :force => true do |t|
     t.string   "bill_type"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20170722123748) do
     t.integer  "quote"
     t.integer  "period"
     t.string   "gstid"
+    t.text     "how_to_reach"
   end
 
   create_table "payments", :force => true do |t|

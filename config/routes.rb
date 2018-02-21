@@ -8,10 +8,15 @@ Aura::Application.routes.draw do
     get 'edit_delivery_date', on: :member
 
     resources :payments
+    collection {post :select}
     
   end
 
-  resources :tasks 
+  resources :tasks do
+    collection do
+    post 'select'
+  end
+end
 
   resources :bills do
     collection do
