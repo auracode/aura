@@ -11,5 +11,6 @@
 	<%= f.input :plan, placeholder: 'enter only numbers'  %>
 	<%= f.input :period, placeholder: 'no of days'  %>
 	<%= f.input :machine_count, placeholder: 'no of machines' %>
+	<%= f.input :hidden, :collection => [[false, 'Unhide'], [true, 'hide']], :label_method => :last, :value_method => :first, as: :radio_buttons, boolean_style: :inline, checked: false %>
     <%= f.button :submit %>
 <% end %>

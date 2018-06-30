@@ -20,7 +20,8 @@ class CustomersController < ApplicationController
 		if params[:search].present?
 		   @customers = Customer.search(params[:search])
     	else
-      		@customers = Customer.all
+    		@customers = Customer.where(:hidden => false)
+      		#@customers = Customer.all
     	end
 
 		respond_to do |f|
@@ -37,6 +38,23 @@ class CustomersController < ApplicationController
 		else
 		@customers = Customer.all
 		end
+	end
+
+	def unhide
+
+		if params[:search].present?
+		   @customers = Customer.search(params[:search])
+    	else
+    		#@customers = Customer.where(:hidden => false)
+      		@customers = Customer.all
+    	end
+
+		respond_to do |f|
+			f.html
+			f.csv { send_data Customer.to_csv }
+			f.xls 
+		end
+		
 	end
 
 

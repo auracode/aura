@@ -6,11 +6,17 @@ Aura::Application.routes.draw do
   resources  :customers do
     collection {post :import}  
     get 'edit_delivery_date', on: :member
+    collection do
+      get 'unhide'
 
+    end
     resources :payments
     collection {post :select}
     
   end
+
+  
+    
 
   resources :tasks do
     collection do

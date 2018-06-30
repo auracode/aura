@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180210074916) do
+ActiveRecord::Schema.define(:version => 20180630080414) do
 
   create_table "bills", :force => true do |t|
     t.string   "bill_type"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20180210074916) do
     t.string   "phone_number"
     t.text     "address"
     t.string   "area"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "consumer_no"
     t.string   "flavors"
     t.integer  "machine_count"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20180210074916) do
     t.integer  "period"
     t.string   "gstid"
     t.text     "how_to_reach"
+    t.boolean  "hidden",            :default => false
   end
 
   create_table "payments", :force => true do |t|
