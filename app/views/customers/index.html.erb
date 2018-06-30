@@ -29,7 +29,7 @@
     <th>Plan</th>
     <th>Machine Count</th>
     <th>Delivery Date</th>
-    <th>Delete Customer</th>
+    
   </tr>
  
   <% @customers.each do |customer| %>
@@ -48,9 +48,7 @@
       <td><%= customer.plan %></td>  
       <td><%= customer.machine_count%></td>
       <td><%= link_to customer.delivery_date_f,  edit_delivery_date_customer_path(customer) %></td>    
-      <td><%= link_to 'Delete Record', customer,
-               :confirm => 'Are you sure?',
-               :method => :delete , :class => "btn btn-mini btn-primary" %></td>
+      <%=# link_to 'Delete Record', customer,confirm => 'Are you sure?',:method => :delete , :class => "btn btn-mini btn-primary" %>
     </tr>
   <% end %>
   <% end %>
